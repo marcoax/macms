@@ -1,0 +1,8 @@
+RewriteEngine On    # Turn on the rewriting engine
+DirectoryIndex index.html index.php
+#RewriteCond %{REQUEST_URI} !^/index.html$ [NC,L]
+RewriteRule    ^admin/?$  		admin/index.php 							[L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+

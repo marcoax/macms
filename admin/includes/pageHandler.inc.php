@@ -1,0 +1,1 @@
+<?php   $objBoot   = new ma_bootstrap_helper;   $objBHTML  = new boostrapHtml();   $objPage= new articoli;   $objPage->Template=ma_get_page();   $curPage=$objPage->curPage=ma_get_page();

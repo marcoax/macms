@@ -1,0 +1,1 @@
+<?php $label=($mode=='cerca')?CL_TOTALE_ELEMENTI_TROVATI:CL_TOTALE_ELEMENTI; ?><div class="pagination-box ">	<div style="display:inline;float:left;" class="mt25 mr5"><?php echo $label?>: <strong><?php echo $count?></strong>  - <?php echo CL_PAGINE_TROVATE?>:</div><?php echo  $pagelist?></div>

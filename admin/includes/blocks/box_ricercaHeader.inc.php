@@ -1,0 +1,1 @@
+<div>    <?php include(DIR_FS_CMS_BLOCKS."searchBar.inc.php")?></div>

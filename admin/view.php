@@ -1,0 +1,1 @@
+<?phpsession_start();include_once("../config/configure.php");if($_SESSION['loggatoFE']==1)include_once(DIR_FS_CATALOG."view.php");else include_once(DIR_FS_CMS."cms_view.php");?>

@@ -1,0 +1,1 @@
+<?php$Dispa = new dispatcher();$Dispa->init();$lang  = $Dispa->getLang();$curArticle = $Dispa->getCurArticle();

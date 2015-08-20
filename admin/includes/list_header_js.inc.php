@@ -1,0 +1,1 @@
+<script src="<?php echo  DIR_WS_CMS_JS?>ma_cms_action.js"></script>

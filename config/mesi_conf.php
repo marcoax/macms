@@ -1,23 +1,6 @@
 <?php
-// First, create an array of month names, January through December
-$fr_Months = array("Janvier", "F&eacute;vrier", "Mars", "Avril",
-                   "Mai", "Juin", "Juillet", "Ao&ucirc;t", "Septembre",
-                   "Octobre", "Novembre", "D&eacute;cembre");
-
-// Then an array of day names, starting with Sunday
-$Days['fr'] = array ("D", "L", "M", "M", "J", "V", "S");
-$it_Months = array("Gennaio", "Febbraio", "Marzo", "Aprile",
-                  "Maggio", "Giugno", "Luglio", "Agosto",
-                  "Settembre", "Ottobre", "Novembre", "Dicembre");
-$Days['it'] = array( "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato","Domenica");
-
-
-$Days['en'] = array( "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday");
-$en_Months= array("January", "February", "March", "April", "May", "June",
-                            "July", "August", "September", "October", "November", "December");
-							
-							
-						
+// First, create an array of month names, January through December$fr_Months = array("Janvier", "F&eacute;vrier", "Mars", "Avril", 					"Mai", "Juin", "Juillet", "Ao&ucirc;t", "Septembre",					"Octobre", "Novembre", "D&eacute;cembre");// Then an array of day names, starting with Sunday$Days['fr'] = array ("D", "L", "M", "M", "J", "V", "S");$it_Months  = array("Gennaio", "Febbraio", "Marzo", "Aprile", 					"Maggio", "Giugno", "Luglio", "Agosto", "Settembre", 					"Ottobre", "Novembre", "Dicembre");$Days['it'] = array( "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato","Domenica");$Days['en'] = array( "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday");$en_Months  = array("January", "February", "March", "April", 					"May", "June","July", "August", "September", 					"October", "November", "December");
+
 $zonelist = array('Kwajalein' => '(GMT-12:00) International Date Line West',
 		'Pacific/Midway' => '(GMT-11:00) Midway Island',
 		'Pacific/Samoa' => '(GMT-11:00) Samoa',
@@ -144,9 +127,3 @@ $zonelist = array('Kwajalein' => '(GMT-12:00) International Date Line West',
 		'Asia/Kamchatka' => '(GMT+12:00) Kamchatka',
 		'Pacific/Auckland' => '(GMT+12:00) Auckland',
 		'Pacific/Tongatapu' => '(GMT+13:00) Nukualofa');
-
-
-
-
-
-?>

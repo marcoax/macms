@@ -168,6 +168,20 @@ class String {
         }
     }
 	
+	public static  function  is_True ($value)
+    // test if a value is TRUE or FALSE
+    {
+        if (is_bool($value)) return $value;
+
+        // a string field may contain several possible values
+        if (preg_match('/^(Y|YES|T|TRUE|ON|1)$/i', $value)) {
+            return true;
+        } // if
+
+        return false;
+
+    } // is_True
+	
 	/**
      * Verifico limita i caratteri di una stringa
      *

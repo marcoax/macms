@@ -3,7 +3,7 @@ var urlAjaxHandlerCms=serverPath+'cms/view/ajax/index.php/';; // percorso  del c
 $(document).ready(function() {
     //  gestione  check  box  liste
 	$('input.checkbox').click(function() {		var itemSel = countItemclick();		if (itemSel > 0) {			$('#toolbar_cerca').hide();
-						if(itemSel==1) {                curItem=$("input.checkbox:checked").val()				$('#editButtonHandler').show();			}			else $('#editButtonHandler').hide();			$('#list-action-bar').fadeIn('1000');
+						if(itemSel==1) {                curItem=$("input.checkbox:checked").val();				$('#editButtonHandler').show();			}			else $('#editButtonHandler').hide();			$('#list-action-bar').fadeIn('1000');
 		} else {			$('#list-action-bar').hide();			$('#toolbar_cerca').fadeIn('1000');
 		}	 });
 	

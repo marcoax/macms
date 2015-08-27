@@ -1,5 +1,5 @@
-<?php if(ma_getParameter('loggedCms')=='1' && ma_getParameter('isAdmin')=='1'):?>
-<ul class="nav navbar-nav navbar-right" id="main-menu-right" role="navigation" style="margin-top:0px">
+
+<ul class="nav navbar-nav navbar-right mr0" id="main-menu-right" role="navigation">
  	 <li class="dropdown">
             <a role="button" class="dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="icon-setting"></i><?php echo CL_PAGE_TITLE_SETTINGS ?>  <span class="caret"></span>
@@ -40,18 +40,4 @@
 			</ul>
      </li>                   
 </ul>
-<?php elseif ($curPage!='index'):?>
-<ul class="nav pull-right" id="main-menu-right" role="navigation" style="margin-top:0px">
- 	<li class="dropdown">
-          <a role="button" class="dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="icon-user"></i> <?php echo  ma_getParameter('NomeUtente')?> <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
-            	<li><a href="<?php echo  DIR_WS_CMS.FILENAME_EDIT?>.php?mode=edit&Id_sez=user&Id_sub=&Id=<?php echo  $_SESSION[uid];?>"> <i class="icon-user"></i> <?php echo  CL_YOUR_PROFILE?></a></li>
-		     	<li class="hide"><a href="<?php echo  FILENAME_EDIT?>.php?mode=edit&Id_sez=anagraficautenti"><i class="icon-user"></i> <?php echo  CL_YOUR_PROFILE?></a></li>
-			    <li class="divider hide"></li>
-			    <li><a href="<?php echo  FILENAME_LOGOUT?>.php"><i class="icon-off"></i> <?php echo  CL_LOGOUT?></a></li>
-			</ul>
-     </li>                   
-</ul>
-<?php endif?><!--/.nav-collapse -->
+

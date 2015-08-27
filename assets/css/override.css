@@ -12,7 +12,7 @@ hr {
 .img-thumbnail {
 	border-radius: 0px;
 }
-.btn {
+.btn, * {
 	border-radius: 0px;
 }
 .form-control {

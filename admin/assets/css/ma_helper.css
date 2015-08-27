@@ -4,6 +4,9 @@
   border-radius: 0 ;
   -moz-border-radius: 0 ;
 }
+.btn, * {
+	border-radius: 0px;
+}
 .relative {position: relative;}
 .absolute {position: absolute;}
 .fixed {position: fixed;}

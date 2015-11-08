@@ -164,12 +164,14 @@ class boostrapHtml extends ma_bootstrap_helper {
 		return  $this->pageTitle;
 	}
 	
-	function getPageMedia( $objPage, $type='immagini' ) {
-        $objItemsPageList= new gallery();
-		$objItemsPageList->makeGallery( $type.$objPage->docSuffix, $objPage->Id );
-		$objItemsPageList->debug =0;
-		$objItemsPageList->getData();
-		return $objItemsPageList->Data;
+	function getPageMedia( $objPage, $type='immagini',$rand='' ) {
+	
+	        $objItemsPageList= new gallery();
+			$objItemsPageList->makeGallery($type.$objPage->docSuffix,$objPage->Id);
+			$objItemsPageList->debug =0;
+			if( $rand ) $objItemsPageList->setRandom( $rand );
+			$objItemsPageList->getData();
+			return $objItemsPageList->Data;
 	
 	}
 	

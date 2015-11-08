@@ -5,24 +5,28 @@ $tabArr = array ();
 $correnteMulti=array();
 array_push ($curArr,$_POST);
 
+
 while (list($label) = each($_POST)){
 // se il post  non e di un array
 if(!is_array($_POST[$label])){
      $curItem=explode('_',$label);
-    //  verifico  se  la tabella  � gi� presente nell'array
-    $ce=in_array ($curItem[0],$tabArr); 
-    $curItem[0];
-   //se non c�  faccio il ciclo
-    $miaTabellaCorrente=strtolower($curItem[0]);
-	
-    $TableQ="SELECT COUNT(*) FROM information_schema.tables  WHERE table_schema = '".DB_DATABASE."' and table_name = '$miaTabellaCorrente'";
-	
-	 $STHC = $DBH->query($TableQ);
-	 $datas= $STHC->fetch();
+     //  verifico  se  la tabella  � gi� presente nell'array
+     $ce= in_array ($curItem[0],$tabArr); 
+     $curItem[0];
+     //se non c�  faccio il ciclo
+     $miaTabellaCorrente = strtolower($curItem[0]);
+	 if($miaTabellaCorrente == 'categorytreedescrizioni' or (isset($_POST['mainTab']) && $_POST['mainTab']==$miaTabellaCorrente)) $datas[0]=1;
+	 else if(!$ce && count($curItem)==2 && $miaTabellaCorrente != "id" && $miaTabellaCorrente!='') {
+	 	 //require (DIR_FS_FUNCTIONS."stop-timer.php");
+	 	 $TableQ ="SELECT COUNT(*) FROM information_schema.tables  WHERE table_schema = '".DB_DATABASE."' and table_name = '$miaTabellaCorrente'";
+		 $STHC = $DBH->query($TableQ);
+	 	 $datas= $STHC->fetch();
+		 }
 	// print_r($datas[0]);
 	 //echo "************************<br>";
      //  non uso   la  funzione se  inserisco  gli accessori  della   macchina
      if($curTab!=$curItem[0] && !$ce &&!empty($miaTabellaCorrente) && $datas[0]==1){
+     	
     
 	    $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	   
@@ -45,7 +49,7 @@ if(!is_array($_POST[$label])){
            for($j=0;$j<=$numero;$j++){
 		     $obj= new subInsert;
 		     $obj->setMultiTable();
-             if(in_array($miaTabellaCorrente,$multiTable)){
+			 if(in_array($miaTabellaCorrente,$multiTable)){
 
                if(!empty($_POST[$curItem[0]."_Numero"])){
                   if($mode=='up'){
@@ -72,12 +76,13 @@ if(!is_array($_POST[$label])){
              $obj->getQuery($mode,$miaTabellaCorrente);
              $upData=$obj->getUpdata();
              $db->execute($upData);
-             
+			
              $msgBox=MSG_HELP_SAVE_OK;
 			 $db->insert_id=$DBH->lastInsertId();
 			 $queryMode=($db->insert_id)?'insert':'update';
              if(in_array($miaTabellaCorrente,$multiUpdate)){
              $corrente=($db->insert_id)?$db->insert_id:$IdAna;
+				 
            }
         }
      }

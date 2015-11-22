@@ -156,6 +156,11 @@ class Tool {
 	}
 	
 	
+	public static function getPemalink( $id) {
+		$data= articoli::ma_getFastRow('articoli',$id);
+		return Tool::seoPathHandler($data);
+		
+	}
 	public static function cmsPreviewHandler( $data,$lang='it',$sep ='-' ){
 	
 		 $pathString ;

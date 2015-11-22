@@ -65,13 +65,43 @@ if( $webApp->config->isMultiLang ) {
 }
 //  sanitize  some  var
 else  {
-  $objPage->Name       = stripslashes($objPage->Name);  // titolo pagina
-  $objPage->ImgBanner  = stripslashes($objPage->ImgBanner); // banner pagina
-  $objPage->Descrizione= stripslashes($objPage->Descrizione); // descrizione pagina
+	$objPage->Name       = stripslashes($objPage->Name);  // titolo pagina
+	$objPage->ImgBanner  = stripslashes($objPage->ImgBanner); // banner pagina
+	$objPage->Descrizione= stripslashes($objPage->Descrizione); // descrizione pagina
 } 
      
-$objPage->pageTitle 	= ( $objPage->Meta_Title ) ? $objPage->Meta_Title:WEBSITE_TITLE.' - '.$objPage->Name;  // titolo pagina usato  nel  tag tigle  tigle 
-$objPage->imgTitle  	= ( $objPage->Meta_Title )  ? $objPage->Meta_Title:$objPage->Name;
+if(SEO_ENABLED==1){
+
+   $objPageData->getPageData($curArticle,$lang,'SEO_META_TITLE');
+   $objPageData->getData(2);
+   $objPage->Meta_Title=stripslashes($objPageData->Data->b);
+
+   $objPageData->getPageData($curArticle,$lang,'SEO_META_DESCRIPTION');
+   $objPageData->getData(2);
+   $objPage->Meta_Description=stripslashes($objPageData->Data->b);
+ 
+   $objPageData->getPageData($curArticle,$lang,'SEO_META_KEYWORD');
+   $objPageData->getData(2);
+   $objPage->Meta_Keywords=stripslashes($objPageData->Data->b);
+   
+   $objPageData->getPageData($curArticle,$lang,'SEO_META_ROBOTS');
+   $objPageData->getData(2);
+   $objPage->Meta_Robots=stripslashes($objPageData->Data->b);
+
+   $objPageData->getPageData($curArticle,$lang,'SEO_META_TITLE_ATTRIBUTE');
+   $objPageData->getData(2);
+   $objPage->Meta_Title_Attribute=stripslashes($objPageData->Data->b);
+   
+   $objPageData->getPageData($curArticle,$lang,'SEO_META_TITLE_MENU');
+   $objPageData->getData(2);
+   $objPage->Meta_Title_Menu=stripslashes($objPageData->Data->b);
+} 
+/* seo  */
+$objPage->pageTitle 	   = ( $objPage->Meta_Title )  		? $objPage->Meta_Title:WEBSITE_TITLE;//' - '.$objPage->Namesss;  // titolo pagina usato  nel  tag tigle  tigle 
+$objPage->imgTitle  	   = ( $objPage->Meta_Title )  		? $objPage->Meta_Title:$objPage->Name;
+$objPage->Meta_Description = ( $objPage->Meta_Description)  ? $objPage->Meta_Description:$objPage->Description;
+
+
 $objPage->pageTopId    	= $pageTopId;
 $objPage->MenuMainData 	= $objMenu->comboTreeArray;  //ora  ho estratto  i   dati della   pagina
 $objPage->Template		= ( $objPage->Template) ? $objPage->Template:$curPage;

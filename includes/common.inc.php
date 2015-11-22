@@ -27,15 +27,17 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo  $objPage->pageTitle?>" />
+    <meta name="description" content="<?php echo  $objPage->Meta_Description ?>" />
 	<meta name="keywords" content="<?php echo  $objPage->Meta_Keywords?>" />
 	<meta name="author" content="<?php SEO_META_AUTHOR?>" />
 	<meta name="google-site-verification" content="" />
     <meta property="og:title" content="<?php echo   $objPage->pageTitle?>" />
 	<meta property="og:url" content="<?php echo  $objPage->curPageURL?>" />
 	<meta property="og:image" content="<?php echo  DIR_WS_IMAGES?>thumb.jpg" />
-	<meta property="og:description" content="<?php echo  $objPage->pageTitle?>" />
+	<meta property="og:description" content="<?php echo  $objPage->Meta_Description ?>" />
 	<link rel="image_src" href="<?php echo  DIR_WS_IMAGES?>thumb.jpg"/>
+	
+	
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,900italic,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cinzel:400,700' rel='stylesheet' type='text/css'>
     <!-- Favicon -->
